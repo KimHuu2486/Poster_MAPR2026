@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disagreement-Aware Multi-View Stacking | MAPR 2026 Poster</title>
+  <meta name="description" content="Landing page poster trình bày nghiên cứu Disagreement-Aware Multi-View Stacking tại hội nghị MAPR 2026.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="section-tile tile-light hero-section">
+    <div class="container">
+      <div class="hero-tag">Poster Presentation • MAPR 2026</div>
+      <h1 class="hero-title">Disagreement-Aware Multi-View Stacking for Robust Malware Classification</h1>
+
+      <!-- Authors -->
+      <div class="authors-simple">
+        <a href="https://orcid.org/0009-0007-5269-9326" target="_blank" title="ORCID: 0009-0007-5269-9326">Kim-Huu Tran</a><sup>1,3</sup>, 
+        <a href="https://orcid.org/0009-0000-0432-0552" target="_blank" title="ORCID: 0009-0000-0432-0552">Nguyen-Huy Le-Huu</a><sup>1,3</sup>, 
+        <a href="https://orcid.org/0009-0008-9072-1392" target="_blank" title="ORCID: 0009-0008-9072-1392">Quoc-Huy Nguyen</a><sup>1,3</sup>, <br>
+        <a href="https://orcid.org/0009-0001-7199-3180" target="_blank" title="ORCID: 0009-0001-7199-3180">Nhut-Thanh Le-Hinh</a><sup>1,2,3</sup>, 
+        <a href="https://orcid.org/0009-0005-5708-7922" target="_blank" title="ORCID: 0009-0005-5708-7922">Minh-Quan Ho-Le</a><sup>1,2,3</sup>, 
+        <a href="https://orcid.org/0000-0003-3046-3041" target="_blank" title="ORCID: 0000-0003-3046-3041">Minh-Triet Tran</a><sup>1,2,3</sup>
+      </div>
+
+      <div class="affiliations-simple">
+        <sup>1</sup>Faculty of Information Technology, University of Science, VNUHCM <br>
+        <sup>2</sup>Software Engineering Lab (SELab), University of Science, VNUHCM • <sup>3</sup>VNU-HCM
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hero-cta-group">
+        <a href="./Disagreement_Aware_Multi_View_Stacking.pdf" target="_blank" class="btn-secondary-pill">
+          <i class="fa-solid fa-file-pdf"></i> Paper PDF
+        </a>
+        <a href="./poster.pdf" target="_blank" class="btn-secondary-pill">
+          <i class="fa-solid fa-file-pdf"></i> Poster PDF
+        </a>
+        <a href="https://github.com/KimHuu2486/Malware-Classification" target="_blank" class="btn-secondary-pill">
+          <i class="fa-brands fa-github"></i> Code
+        </a>
+        <a href="#citation" class="btn-secondary-pill">
+          <i class="fa-solid fa-quote-right"></i> BibTeX
+        </a>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="metrics-simple">
+        <div class="metric-item">
+          <div class="metric-val">99.86%</div>
+          <div class="metric-lbl">Accuracy</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-val">0.00555</div>
+          <div class="metric-lbl">Log Loss</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-val">1.86 ms</div>
+          <div class="metric-lbl">Latency / Sample</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABSTRACT & OVERVIEW (Parchment Tile) -->
+  <section class="section-tile tile-parchment">
+    <div class="container-narrow">
+      <div class="abstract-card">
+        <h2 class="section-headline" style="margin-bottom: 20px;">Abstract</h2>
+        <p class="abstract-text">
+          Static malware family classification can use evidence from raw byte content, disassembly, and Portable Executable metadata. Each representation captures different characteristics of a malware sample. We propose a <strong>multi-view stacking framework</strong> for Microsoft BIG 2015 that represents each sample through <strong>seven static feature views</strong> and combines their predictions at the meta level. Nine base, or Level-0, XGBoost and LightGBM classifiers generate 81 out-of-fold class probabilities. We augment these probabilities with statistics describing central tendency, inter-model dispersion, and predictive entropy, resulting in <strong>126 disagreement-aware meta-features</strong>. Two meta-level, or Level-1, classifiers then produce predictions that are combined through <strong>constrained weight optimization</strong>. On an 80/20 train-test split, the framework achieves <strong>99.86% accuracy</strong>, <strong>99.83% weighted F1-score</strong>, an MCC of 0.9984, and a multiclass log loss of 0.00555. When trained on the full labeled dataset, it obtains private and public leaderboard log losses of <strong>0.00467</strong> and <strong>0.00805</strong>, respectively. These results indicate that explicitly representing agreement and disagreement among heterogeneous static classifiers can improve multi-view stacking within the BIG 2015 evaluation setting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY SECTION (Parchment Tile) -->
+  <section class="section-tile tile-parchment" id="pipeline-figure">
+    <div class="container">
+      <h2 class="section-headline" style="margin-bottom: 24px;">Methodology</h2>
+
+      <!-- Vector Pipeline Diagram (Clean, seamless 100% exact vector diagram matching user paper) -->
+      <div class="figure-card">
+        <svg viewBox="0 0 960 460" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', sans-serif, monospace; background: #ffffff;">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+            </marker>
+          </defs>
+
+          <!-- Outer Container Border -->
+          <rect x="10" y="10" width="940" height="440" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+
+          <!-- INPUT CYLINDERS (.asm & .bytes) -->
+          <g transform="translate(45, 160)">
+            <path d="M 0 10 C 0 0, 40 0, 40 10 L 40 35 C 40 45, 0 45, 0 35 Z" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.2"/>
+            <ellipse cx="20" cy="10" rx="20" ry="6" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.2"/>
+            <text x="20" y="27" font-size="11" font-family="monospace" font-weight="600" fill="#111827" text-anchor="middle">.asm</text>
+          </g>
+          <g transform="translate(45, 235)">
+            <path d="M 0 10 C 0 0, 40 0, 40 10 L 40 35 C 40 45, 0 45, 0 35 Z" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.2"/>
+            <ellipse cx="20" cy="10" rx="20" ry="6" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.2"/>
+            <text x="20" y="27" font-size="11" font-family="monospace" font-weight="600" fill="#111827" text-anchor="middle">.bytes</text>
+          </g>
+
+          <!-- Arrows from Cylinders to Stage 1 -->
+          <path d="M 85 180 L 120 180" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <path d="M 85 255 L 120 255" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <!-- STAGE 1 BOX -->
+          <rect x="120" y="30" width="270" height="400" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="255" y="52" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 1: Multi-view Base</text>
+          <text x="255" y="68" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Classifiers</text>
+
+          <!-- View -> Model Rows in Stage 1 -->
+          <rect x="135" y="85" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="102" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Tabular</text>
+          <path d="M 225 98 L 255 98" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="85" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="102" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <rect x="135" y="122" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="139" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Byte N-gram</text>
+          <path d="M 225 135 L 255 135" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="122" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="139" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
+
+          <rect x="135" y="159" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="176" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Opcode N-gram</text>
+          <path d="M 225 172 L 255 172" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="159" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="176" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <rect x="135" y="196" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="213" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Pixel Density</text>
+          <path d="M 225 209 L 255 209" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="196" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="213" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <rect x="135" y="233" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="250" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">API/DLL</text>
+          <path d="M 225 246 L 255 246" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="233" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="250" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <rect x="135" y="270" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="287" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Section Stats</text>
+          <path d="M 225 283 L 255 283" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="270" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="287" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <rect x="135" y="307" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="324" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Strings</text>
+          <path d="M 225 320 L 255 320" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="307" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="324" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
+
+          <rect x="135" y="344" width="90" height="70" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="180" y="372" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Concatenated</text>
+          <text x="180" y="386" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Features</text>
+
+          <path d="M 225 358 L 255 358" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="345" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="362" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
+
+          <path d="M 225 398 L 255 398" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <rect x="255" y="385" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="292" y="402" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
+
+          <!-- Arrow Stage 1 -> Stage 2 -->
+          <path d="M 390 230 L 415 230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <!-- STAGE 2 BOX -->
+          <rect x="415" y="30" width="145" height="400" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="487" y="52" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 2: Feature</text>
+          <text x="487" y="68" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Aggregation</text>
+
+          <rect x="430" y="85" width="115" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+          <text x="487" y="104" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Base Predictions</text>
+          <text x="487" y="118" font-size="10" fill="#92400e" text-anchor="middle">(81-dim)</text>
+
+          <path d="M 487 130 L 487 145" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <g transform="translate(430, 145)">
+            <rect width="115" height="195" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+            <rect x="8" y="12" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+            <text x="57" y="32" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Statistical</text>
+            <text x="57" y="46" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Bounds</text>
+
+            <rect x="8" y="72" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+            <text x="57" y="92" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Standard</text>
+            <text x="57" y="106" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Deviation</text>
+
+            <rect x="8" y="132" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+            <text x="57" y="160" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Entropy</text>
+          </g>
+
+          <path d="M 487 340 L 487 355" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <rect x="430" y="355" width="115" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+          <text x="487" y="374" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Meta-features</text>
+          <text x="487" y="388" font-size="10" fill="#92400e" text-anchor="middle">(126-dim)</text>
+
+          <!-- Arrow Stage 2 -> Stage 3 -->
+          <path d="M 560 230 L 585 230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <!-- STAGE 3 BOX -->
+          <rect x="585" y="110" width="220" height="240" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="695" y="130" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 3: Stacking</text>
+          <text x="695" y="146" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Ensemble Optimization</text>
+
+          <rect x="600" y="165" width="85" height="50" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+          <text x="642" y="187" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">Logistic</text>
+          <text x="642" y="201" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">Regression</text>
+
+          <rect x="600" y="260" width="85" height="50" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+          <text x="642" y="290" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">XGBoost</text>
+
+          <path d="M 685 190 L 710 190 L 710 235" stroke="#4b5563" stroke-width="1.2"/>
+          <path d="M 685 285 L 710 285 L 710 235" stroke="#4b5563" stroke-width="1.2"/>
+          <path d="M 710 235 L 715 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <rect x="715" y="195" width="75" height="80" rx="6" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.2"/>
+          <text x="752" y="222" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">SLSQP Weight</text>
+          <text x="752" y="238" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">Optimization</text>
+
+          <path d="M 805 235 L 830 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <rect x="830" y="210" width="90" height="50" rx="25" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+          <text x="875" y="233" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Final</text>
+          <text x="875" y="247" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Prediction</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOTA BENCHMARK COMPARISON SECTION (Light Tile) -->
+  <section class="section-tile tile-light" id="comparison">
+    <div class="container">
+      <h2 class="section-headline" style="margin-bottom: 8px;">SOTA Benchmark Comparison</h2>
+      <p style="text-align: center; font-size: 14px; color: var(--color-body-muted); max-width: 860px; margin: 0 auto 32px auto; line-height: 1.5;">
+        <strong>Table IV:</strong> Contextual comparison of independently reported results on Microsoft BIG 2015. <em>The studies use different evaluation protocols and should not be interpreted as a controlled ranking.</em>
+      </p>
+
+      <div class="table-card-white">
+        <table class="sota-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Representation / Strategy</th>
+              <th>Evaluation Protocol</th>
+              <th>Accuracy</th>
+              <th>F1-score</th>
+              <th>Log Loss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Salas et al. [15]</strong></td>
+              <td>RGB malware images; transfer learning with MobileNet</td>
+              <td>70% train, 15% validation, 15% test</td>
+              <td>98.41%</td>
+              <td>95.96%</td>
+              <td>0.08078</td>
+            </tr>
+            <tr>
+              <td><strong>Fan et al. [16]</strong></td>
+              <td>Visualized malware images; GCSA-ResNet</td>
+              <td>72% train, 8% validation, 20% test on a labeled subset</td>
+              <td>98.58%</td>
+              <td>98.58%</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Chen and Ren [11]</strong></td>
+              <td>Fused binary and assembly features; XGBoost</td>
+              <td>Five-fold cross-validation on the labeled training set</td>
+              <td>99.87%</td>
+              <td>—</td>
+              <td>0.007</td>
+            </tr>
+            <tr>
+              <td><strong>Khan et al. [17]</strong></td>
+              <td>1,795 static features; D3QN sequential feature selection</td>
+              <td>80% train, 20% test</td>
+              <td>99.22%</td>
+              <td>99.20%</td>
+              <td>—</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Proposed Method (Ours)</strong></td>
+              <td><strong>Seven static views; disagreement-aware stacking</strong></td>
+              <td><strong>80% train, 20% holdout; five-fold OOF generation within training</strong></td>
+              <td><strong>99.86%</strong></td>
+              <td><strong>99.83%</strong></td>
+              <td><strong>0.00555</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 13px; color: var(--color-body-muted); margin-top: 14px; text-align: left; line-height: 1.5;">
+        * Values are reported as provided by the corresponding studies. F1-score definitions, feature representations, data partitions, and model-selection procedures may differ. “—” denotes an unreported metric. Lower log loss is better.
+      </p>
+    </div>
+  </section>
+
+  <!-- BIBTEX CITATION -->
+  <section class="section-tile tile-parchment" id="citation">
+    <div class="container-narrow">
+      <h2 class="section-headline">Citation</h2>
+      <div class="bibtex-card-white">
+        <div class="bibtex-header">
+          <span class="bibtex-label"><i class="fa-solid fa-quote-left" style="color: var(--color-primary);"></i> BibTeX</span>
+          <button class="copy-btn-white" onclick="copyBibtex()"><i class="fa-solid fa-copy"></i> Copy BibTeX</button>
+        </div>
+        <pre id="bibtex-code">@inproceedings{tran2026disagreement,
+  title     = {Disagreement-Aware Multi-View Stacking for Robust Malware Classification},
+  author    = {Tran, Kim-Huu and Le-Huu, Nguyen-Huy and Nguyen, Quoc-Huy and Le-Hinh, Nhut-Thanh and Ho-Le, Minh-Quan and Tran, Minh-Triet},
+  booktitle = {International Conference on Multimedia Analysis and Pattern Recognition (MAPR)},
+  year      = {2026},
+  publisher = {IEEE}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="simple-footer">
+    <div class="container">
+      <div>MAPR 2026 Poster Presentation • Faculty of Information Technology & SELab, VNUHCM-US</div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

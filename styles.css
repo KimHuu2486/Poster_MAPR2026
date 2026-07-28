@@ -1,0 +1,514 @@
+/* ==========================================================================
+   SIMPLE & ELEGANT APPLE DESIGN SYSTEM (DESIGN.md Compliant)
+   ========================================================================== */
+
+:root {
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-ink: #1d1d1f;
+  --color-body-muted: #6e6e73;
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f5f5f7;
+  --color-surface-pearl: #fafafc;
+  --color-hairline: #e0e0e0;
+  
+  --font-family: "Inter", SF Pro Display, -apple-system, system-ui, sans-serif;
+  --radius-pill: 9999px;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-product: 0 5px 30px rgba(0, 0, 0, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Frosted Sub-Nav */
+.sub-nav-frosted {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.sub-nav-frosted .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.venue-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: rgba(0, 102, 204, 0.08);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.sub-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Pill Buttons */
+.btn-primary-pill {
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-pill:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary-pill {
+  background-color: transparent;
+  color: var(--color-primary) !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-pill:active {
+  transform: scale(0.95);
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Section Tiles */
+.section-tile {
+  padding: 64px 0;
+}
+
+.tile-light {
+  background-color: var(--color-canvas);
+}
+
+.tile-parchment {
+  background-color: var(--color-canvas-parchment);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  max-width: 960px;
+  margin: 0 auto 24px auto;
+}
+
+.authors-simple {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #6b7280;
+}
+
+.authors-simple a {
+  color: #3b82f6;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.authors-simple a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.authors-simple sup {
+  font-size: 12px;
+  color: #6b7280;
+  margin-left: 1px;
+}
+
+.affiliations-simple {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.affiliations-simple sup {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+/* Simple Metrics Bar */
+.metrics-simple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-canvas-parchment);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 20px 32px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.metric-item {
+  text-align: center;
+  flex: 1;
+}
+
+.metric-val {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.28px;
+}
+
+.metric-lbl {
+  font-size: 12px;
+  color: var(--color-body-muted);
+  margin-top: 2px;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-hairline);
+  margin: 0 16px;
+}
+
+/* Headings & Text */
+.section-headline {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-subheadline {
+  font-size: 16px;
+  color: var(--color-body-muted);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Abstract Card Container */
+.abstract-card {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-soft);
+}
+
+.abstract-text {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #333336;
+  text-align: justify;
+}
+
+/* Pipeline Cards */
+.pipeline-simple {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pipe-card {
+  background-color: var(--color-surface-pearl);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.pipe-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.pipe-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pipe-card p {
+  font-size: 14px;
+  color: var(--color-body-muted);
+  line-height: 1.47;
+}
+
+/* PDF Preview Box */
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Figure Card Diagram Container */
+.figure-card {
+  background-color: var(--color-canvas);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-product);
+  border: 1px solid var(--color-hairline);
+  margin-top: 12px;
+}
+
+.pdf-diagram-box {
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pdf-diagram-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+
+
+/* BibTeX White Card */
+.bibtex-card-white {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: var(--color-canvas-parchment);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.bibtex-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-btn-white {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn-white:hover {
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+.copy-btn-white:active {
+  transform: scale(0.95);
+}
+
+.bibtex-card-white pre {
+  padding: 20px;
+  margin: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* SOTA Table Styling */
+.table-card-white {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow-x: auto;
+}
+
+.sota-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.sota-table th {
+  background-color: var(--color-canvas-parchment);
+  font-weight: 600;
+  color: var(--color-ink);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.sota-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-hairline);
+  color: var(--color-ink);
+}
+
+.sota-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sota-table tr.highlight-row {
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+.sota-table tr.highlight-row td {
+  color: var(--color-primary);
+}
+
+/* Footer */
+.simple-footer {
+  border-top: 1px solid var(--color-hairline);
+  padding: 32px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-body-muted);
+  background-color: var(--color-canvas-parchment);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1d1d1f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 30px;
+  }
+  .pipeline-simple {
+    grid-template-columns: 1fr;
+  }
+  .metrics-simple {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .metric-divider {
+    display: none;
+  }
+}

@@ -215,6 +215,10 @@ a {
   color: #4b5563;
 }
 
+.author-note {
+  margin-top: 4px;
+}
+
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
@@ -342,6 +346,13 @@ a {
   box-shadow: var(--shadow-product);
   border: 1px solid var(--color-hairline);
   margin-top: 12px;
+}
+
+.figure-card svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .pdf-diagram-box {
@@ -500,6 +511,16 @@ a {
 @media (max-width: 768px) {
   .hero-title {
     font-size: 30px;
+  }
+  .figure-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+  }
+  .figure-card svg {
+    width: 900px;
+    min-width: 900px;
+    max-width: none;
   }
   .pipeline-simple {
     grid-template-columns: 1fr;

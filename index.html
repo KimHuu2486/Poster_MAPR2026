@@ -27,7 +27,7 @@
 
       <!-- Authors -->
       <div class="authors-simple">
-        <a href="https://orcid.org/0009-0007-5269-9326" target="_blank" title="ORCID: 0009-0007-5269-9326">Kim-Huu Tran</a><sup>1,3</sup>, 
+        <a href="https://orcid.org/0009-0007-5269-9326" target="_blank" title="ORCID: 0009-0007-5269-9326">Kim-Huu Tran</a><sup>1,3,*</sup>,
         <a href="https://orcid.org/0009-0000-0432-0552" target="_blank" title="ORCID: 0009-0000-0432-0552">Nguyen-Huy Le-Huu</a><sup>1,3</sup>, 
         <a href="https://orcid.org/0009-0008-9072-1392" target="_blank" title="ORCID: 0009-0008-9072-1392">Quoc-Huy Nguyen</a><sup>1,3</sup>, <br>
         <a href="https://orcid.org/0009-0001-7199-3180" target="_blank" title="ORCID: 0009-0001-7199-3180">Nhut-Thanh Le-Hinh</a><sup>1,2,3</sup>, 
@@ -36,8 +36,10 @@
       </div>
 
       <div class="affiliations-simple">
-        <sup>1</sup>Faculty of Information Technology, University of Science, VNUHCM <br>
-        <sup>2</sup>Software Engineering Lab (SELab), University of Science, VNUHCM • <sup>3</sup>VNU-HCM
+        <sup>1</sup> Faculty of Information Technology, University of Science, VNUHCM <br>
+        <sup>2</sup> Software Engineering Lab, University of Science, VNUHCM <br>
+        <sup>3</sup> Vietnam National University, Ho Chi Minh City, Vietnam
+        <div class="author-note"><sup>*</sup> First author</div>
       </div>
 
       <!-- Action Buttons -->
@@ -95,11 +97,14 @@
 
       <!-- Vector Pipeline Diagram (Clean, seamless 100% exact vector diagram matching user paper) -->
       <div class="figure-card">
-        <svg viewBox="0 0 960 460" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', sans-serif, monospace; background: #ffffff;">
+        <svg viewBox="0 0 960 460" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; background: #ffffff;">
           <defs>
-            <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+            <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#555555" />
             </marker>
+            <style>
+              text { fill: #2f2f2f !important; }
+            </style>
           </defs>
 
           <!-- Outer Container Border -->
@@ -109,12 +114,12 @@
           <g transform="translate(45, 160)">
             <path d="M 0 10 C 0 0, 40 0, 40 10 L 40 35 C 40 45, 0 45, 0 35 Z" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.2"/>
             <ellipse cx="20" cy="10" rx="20" ry="6" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.2"/>
-            <text x="20" y="27" font-size="11" font-family="monospace" font-weight="600" fill="#111827" text-anchor="middle">.asm</text>
+            <text x="20" y="27" font-size="11" font-weight="600" fill="#111827" text-anchor="middle">.asm</text>
           </g>
           <g transform="translate(45, 235)">
             <path d="M 0 10 C 0 0, 40 0, 40 10 L 40 35 C 40 45, 0 45, 0 35 Z" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.2"/>
             <ellipse cx="20" cy="10" rx="20" ry="6" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.2"/>
-            <text x="20" y="27" font-size="11" font-family="monospace" font-weight="600" fill="#111827" text-anchor="middle">.bytes</text>
+            <text x="20" y="27" font-size="11" font-weight="600" fill="#111827" text-anchor="middle">.bytes</text>
           </g>
 
           <!-- Arrows from Cylinders to Stage 1 -->
@@ -122,127 +127,128 @@
           <path d="M 85 255 L 120 255" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
           <!-- STAGE 1 BOX -->
-          <rect x="120" y="30" width="270" height="400" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
-          <text x="255" y="52" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 1: Multi-view Base</text>
-          <text x="255" y="68" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Classifiers</text>
+          <rect x="120" y="30" width="270" height="400" rx="8" fill="none" stroke="#909090" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="255" y="52" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Stage 1: Multi-view Base</text>
+          <text x="255" y="68" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Classifiers</text>
 
           <!-- View -> Model Rows in Stage 1 -->
-          <rect x="135" y="85" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="85" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="102" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Tabular</text>
           <path d="M 225 98 L 255 98" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="85" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="85" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="102" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
-          <rect x="135" y="122" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="122" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="139" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Byte N-gram</text>
           <path d="M 225 135 L 255 135" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="122" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="122" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="139" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
 
-          <rect x="135" y="159" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="159" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="176" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Opcode N-gram</text>
           <path d="M 225 172 L 255 172" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="159" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="159" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="176" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
-          <rect x="135" y="196" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="196" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="213" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Pixel Density</text>
           <path d="M 225 209 L 255 209" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="196" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="196" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="213" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
-          <rect x="135" y="233" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="233" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="250" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">API/DLL</text>
           <path d="M 225 246 L 255 246" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="233" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="233" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="250" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
-          <rect x="135" y="270" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="270" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="287" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Section Stats</text>
           <path d="M 225 283 L 255 283" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="270" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="270" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="287" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
-          <rect x="135" y="307" width="90" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="307" width="90" height="26" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="324" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Strings</text>
           <path d="M 225 320 L 255 320" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="307" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="307" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="324" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
 
-          <rect x="135" y="344" width="90" height="70" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="135" y="344" width="90" height="70" rx="4" fill="#edf4ff" stroke="#9fc5ff" stroke-width="1"/>
           <text x="180" y="372" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Concatenated</text>
           <text x="180" y="386" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">Features</text>
 
           <path d="M 225 358 L 255 358" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="345" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="345" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="362" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">XGBoost</text>
 
           <path d="M 225 398 L 255 398" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-          <rect x="255" y="385" width="75" height="26" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="255" y="385" width="75" height="26" rx="4" fill="#d8e7fb" stroke="#6ea5f7" stroke-width="1"/>
           <text x="292" y="402" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">LightGBM</text>
 
           <!-- Arrow Stage 1 -> Stage 2 -->
           <path d="M 390 230 L 415 230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
           <!-- STAGE 2 BOX -->
-          <rect x="415" y="30" width="145" height="400" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
-          <text x="487" y="52" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 2: Feature</text>
-          <text x="487" y="68" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Aggregation</text>
+          <rect x="415" y="30" width="145" height="400" rx="8" fill="none" stroke="#909090" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="487" y="52" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Stage 2: Feature</text>
+          <text x="487" y="68" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Aggregation</text>
 
-          <rect x="430" y="85" width="115" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+          <rect x="430" y="85" width="115" height="45" rx="4" fill="#fff7dc" stroke="#e4b547" stroke-width="1"/>
           <text x="487" y="104" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Base Predictions</text>
           <text x="487" y="118" font-size="10" fill="#92400e" text-anchor="middle">(81-dim)</text>
 
           <path d="M 487 130 L 487 145" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
           <g transform="translate(430, 145)">
-            <rect width="115" height="195" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-            <rect x="8" y="12" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-            <text x="57" y="32" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Statistical</text>
-            <text x="57" y="46" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Bounds</text>
+            <rect width="115" height="195" rx="4" fill="#ffffff" stroke="#777777" stroke-width="1"/>
+            <rect x="8" y="12" width="99" height="46" rx="4" fill="#fff2c8" stroke="#d9aa3d" stroke-width="1"/>
+            <text x="57" y="32" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Aggregation</text>
+            <text x="57" y="46" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Statistics</text>
 
-            <rect x="8" y="72" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+            <rect x="8" y="72" width="99" height="46" rx="4" fill="#fff2c8" stroke="#d9aa3d" stroke-width="1"/>
             <text x="57" y="92" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Standard</text>
             <text x="57" y="106" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Deviation</text>
 
-            <rect x="8" y="132" width="99" height="46" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+            <rect x="8" y="132" width="99" height="46" rx="4" fill="#fff2c8" stroke="#d9aa3d" stroke-width="1"/>
             <text x="57" y="160" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Entropy</text>
           </g>
 
           <path d="M 487 340 L 487 355" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
-          <rect x="430" y="355" width="115" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+          <rect x="430" y="355" width="115" height="45" rx="4" fill="#fff7dc" stroke="#e4b547" stroke-width="1"/>
           <text x="487" y="374" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Meta-features</text>
           <text x="487" y="388" font-size="10" fill="#92400e" text-anchor="middle">(126-dim)</text>
 
-          <!-- Arrow Stage 2 -> Stage 3 -->
-          <path d="M 560 230 L 585 230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
-
           <!-- STAGE 3 BOX -->
-          <rect x="585" y="110" width="220" height="240" rx="8" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="5 4"/>
-          <text x="695" y="130" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Stage 3: Stacking</text>
-          <text x="695" y="146" font-size="12" font-weight="700" font-family="monospace" fill="#111827" text-anchor="middle">Ensemble Optimization</text>
+          <rect x="585" y="110" width="220" height="240" rx="8" fill="none" stroke="#909090" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="695" y="130" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Stage 3: Stacking</text>
+          <text x="695" y="146" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">Ensemble Optimization</text>
 
-          <rect x="600" y="165" width="85" height="50" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+          <!-- Stage 2 predictions feed both meta-models -->
+          <path d="M 560 190 L 600 190" stroke="#555555" stroke-width="1.2" marker-end="url(#arr)"/>
+          <path d="M 560 285 L 600 285" stroke="#555555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+          <rect x="600" y="165" width="85" height="50" rx="4" fill="#deefd8" stroke="#79b86d" stroke-width="1"/>
           <text x="642" y="187" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">Logistic</text>
           <text x="642" y="201" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">Regression</text>
 
-          <rect x="600" y="260" width="85" height="50" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+          <rect x="600" y="260" width="85" height="50" rx="4" fill="#deefd8" stroke="#79b86d" stroke-width="1"/>
           <text x="642" y="290" font-size="10" font-weight="600" fill="#14532d" text-anchor="middle">XGBoost</text>
 
-          <path d="M 685 190 L 710 190 L 710 235" stroke="#4b5563" stroke-width="1.2"/>
-          <path d="M 685 285 L 710 285 L 710 235" stroke="#4b5563" stroke-width="1.2"/>
-          <path d="M 710 235 L 715 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <path d="M 685 190 L 710 190 L 710 235" fill="none" stroke="#555555" stroke-width="1.2"/>
+          <path d="M 685 285 L 710 285 L 710 235" fill="none" stroke="#555555" stroke-width="1.2"/>
+          <path d="M 710 235 L 725 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
-          <rect x="715" y="195" width="75" height="80" rx="6" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.2"/>
-          <text x="752" y="222" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">SLSQP Weight</text>
-          <text x="752" y="238" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">Optimization</text>
+          <rect x="725" y="195" width="75" height="80" rx="6" fill="#bddfae" stroke="#65a957" stroke-width="1.2"/>
+          <text x="762" y="222" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">SLSQP Weight</text>
+          <text x="762" y="238" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">Optimization</text>
 
-          <path d="M 805 235 L 830 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
+          <path d="M 800 235 L 840 235" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arr)"/>
 
-          <rect x="830" y="210" width="90" height="50" rx="25" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
-          <text x="875" y="233" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Final</text>
-          <text x="875" y="247" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Prediction</text>
+          <rect x="840" y="210" width="90" height="50" rx="25" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+          <text x="885" y="233" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Final</text>
+          <text x="885" y="247" font-size="11" font-weight="700" fill="#111827" text-anchor="middle">Prediction</text>
         </svg>
       </div>
     </div>
@@ -270,7 +276,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Salas et al. [15]</strong></td>
+              <td><strong>Salas et al.</strong></td>
               <td>RGB malware images; transfer learning with MobileNet</td>
               <td>70% train, 15% validation, 15% test</td>
               <td>98.41%</td>
@@ -278,7 +284,7 @@
               <td>0.08078</td>
             </tr>
             <tr>
-              <td><strong>Fan et al. [16]</strong></td>
+              <td><strong>Fan et al.</strong></td>
               <td>Visualized malware images; GCSA-ResNet</td>
               <td>72% train, 8% validation, 20% test on a labeled subset</td>
               <td>98.58%</td>
@@ -286,7 +292,7 @@
               <td>—</td>
             </tr>
             <tr>
-              <td><strong>Chen and Ren [11]</strong></td>
+              <td><strong>Chen and Ren</strong></td>
               <td>Fused binary and assembly features; XGBoost</td>
               <td>Five-fold cross-validation on the labeled training set</td>
               <td>99.87%</td>
@@ -294,7 +300,7 @@
               <td>0.007</td>
             </tr>
             <tr>
-              <td><strong>Khan et al. [17]</strong></td>
+              <td><strong>Khan et al.</strong></td>
               <td>1,795 static features; D3QN sequential feature selection</td>
               <td>80% train, 20% test</td>
               <td>99.22%</td>

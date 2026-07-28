@@ -526,8 +526,27 @@ a {
     grid-template-columns: 1fr;
   }
   .metrics-simple {
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    padding: 16px 10px;
+  }
+  .metric-item {
+    min-width: 0;
+    padding: 0 6px;
+    border-left: 1px solid var(--color-hairline);
+  }
+  .metric-item:first-child {
+    border-left: 0;
+  }
+  .metric-val {
+    font-size: 22px;
+  }
+  .metric-lbl {
+    font-size: 11px;
+    white-space: nowrap;
   }
   .metric-divider {
     display: none;
